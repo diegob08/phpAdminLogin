@@ -23,9 +23,14 @@ function login($username, $password, $ip){
         if(mysqli_query($link, $loginstring)){
           $updatestring = "UPDATE tbl_user SET user_ip = '$ip' WHERE user_id = {$id}";
           $updatequery = mysqli_query($link, $updatestring);
+
+
+          //date and time of LAST login
+          $lastTime = "UPDATE tbl_user SET user_date = NOW()  WHERE user_id = {$id}";
+          $showTime = mysqli_query($link,$lastTime);
         }
         //echo $id;
-        redirect_to("admin_index.php");
+        redirect_to('admin_index.php');
       }else{
         $message="Username and or password is incorrect. <br> Please make sure your caplock key is turned off.";
         return $message;

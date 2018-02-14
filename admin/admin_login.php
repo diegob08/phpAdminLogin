@@ -2,7 +2,6 @@
 <?php
   //init_set('display');
 //  error_reporting(!_ALL);
-
   require_once('phpscripts/config.php');
 
   $ip = $_SERVER['REMOTE_ADDR'];
