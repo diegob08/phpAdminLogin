@@ -7,6 +7,7 @@
 
   $ip = $_SERVER['REMOTE_ADDR'];
   //  echo $ip;
+
   if(isset($_POST['submit'])){
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -16,7 +17,7 @@
         $message = $result;
     }else{
     $message = "Please fill in the required fields";
-    echo $message;
+    //echo $message;
     }
   }
 ?>
@@ -25,18 +26,22 @@
 <html>
 <head>
 <meta charset ="UTF-8">
-<title>CMS  PORTAL LOGIN</title>
+<link rel="stylesheet" href="css/main.css">
+<title>User Login</title>
 </head>
 <body>
-
-  <h1>Welcome Company Name</h1>
-  <?php if(!empty($message)){echo $message;} ?>
+<div id="loginCont">
+  <h1 class="title">Admin Login</h1>
+  <section class= "msg"><?php if(!empty($message)){echo $message;} ?></section>
+  <section id="formSect">
   <form action="admin_login.php" method="post">
-    <label>Username:</label>
-    <input type="text" name="username" value="">
-    <label>Password:</label>
-    <input type="text" name="password" value="">
+    <label class="hidden">Username:</label>
+    <input type="text" name="username" value="" placeholder="username">
+    <label class="hidden">Password:</label>
+    <input type="password" name="password" value="" placeholder="password">
     <input type="submit" name="submit" value="Login">
   </form>
+</section>
+</div>
 </body>
 </html>
