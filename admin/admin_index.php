@@ -1,26 +1,14 @@
-
 <?php
-  //init_set('display');
-//  error_reporting(!_ALL);
-
-  require_once('phpscripts/config.php');
-  confirm_logged_in();
-
-//  $loginTime = "Your last login was on".date("Y-m-d")."T".date("H:i:s")."Z");
+	require_once('phpscripts/config.php');
+	confirm_logged_in();
 ?>
-
 <!doctype html>
 <html>
 <head>
-<meta charset ="UTF-8">
-<title>CMS  PORTAL</title>
+<meta charset="UTF-8">
+<title>Welcome to your admin panel</title>
 </head>
 <body>
-
-  <h1>Welcome Company Name</h1>
-  <?php
-  echo "<h2>Hi-{$_SESSION['user_name']}</h2>";
-  echo "<p>{$loginTime}</p>";
-  ?>
+	<?php echo $_SESSION['user_name'];  ?>
 </body>
 </html>
