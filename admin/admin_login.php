@@ -22,10 +22,10 @@ if (isset($_POST['submit'])) {
     <title>Welcome to your admin panel login</title>
 </head>
 <body>
-<?php if ($message !== 'locked') {
-    echo $message;
-    ?>
     <div id="loginCont">
+      <?php if ($message !== 'locked') {
+          echo $message;
+          ?>
         <h1 class="title">Admin Login</h1>
         <section id="formSect">
             <form action="admin_login.php" method="post">
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     <div id="loginCont">
         <h1 class="title">Admin Login</h1>
         <section id="formSect">
-            Your account has been locked! Please contact admin
+            <p>Your account has been locked! Please contact admin</p>
         </section>
     </div>
 <?php } ?>

@@ -9,16 +9,17 @@ confirm_logged_in();
     <title>Welcome to your admin panel</title>
 </head>
 <body>
+<!--adding time zone-->
 <?php
-$time = date("H");
+$timeZone = date("H");
 
-if ($time < "12") {
+if ($timeZone < "12") {
     $greeting = "Good morning!";
-} else if ($time >= "12" && $time < "17") {
+} else if ($timeZone >= "12" && $timeZone < "17") {
     $greeting = "Good afternoon!";
-} else if ($time >= "17" && $time < "19") {
+} else if ($timeZone >= "17" && $timeZone < "19") {
     $greeting = "Good evening!";
-} else if ($time >= "19") {
+} else if ($timeZone >= "19") {
     $greeting = "Good night!";
 }
 ?>
