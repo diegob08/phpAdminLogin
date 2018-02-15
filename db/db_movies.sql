@@ -1027,8 +1027,17 @@ CREATE TABLE tbl_user (
   user_pass varchar(250) NOT NULL,
   user_email varchar(250) NOT NULL,
   user_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  user_ip varchar(50) NOT NULL DEFAULT 'no'
+  user_ip varchar(50) NOT NULL DEFAULT 'no',
+  user_attempt varchar(255) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+LOCK TABLES `tbl_user` WRITE;
+/*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
+INSERT INTO `tbl_user` VALUES (1,'Diego','dbernal','202cb962ac59075b964b07152d234b70','d.bernal91@gmail.com','2018-02-15 03:16:27','::1','0');
 
 --
 -- Indexes for dumped tables
