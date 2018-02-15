@@ -22,10 +22,9 @@
 <title>Welcome to your admin panel login</title>
 </head>
 <body>
-	<?php if(!empty($message)){ echo $message;} ?>
-
   <div id="loginCont">
     <h1 class="title">Admin Login</h1>
+    <section class="msg"><?php if(!empty($message)){ echo $message;} ?></section>
     <section id="formSect">
   	<form action="admin_login.php" method="post">
   		<label class="hidden">Username:</label>

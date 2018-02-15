@@ -1,8 +1,18 @@
 <?php
 function logIn($username, $password, $ip) {
   require_once('connect.php');
+
   $username = mysqli_real_escape_string($link, $username);
   $password = mysqli_real_escape_string($link, $password);
+  $max_attempts = 3;
+  //trying to add max attemps
+  $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO($dsn, $username, $password, $options);
+
+
+  if(login_attempt_count($pdo) <= $max_attempts){
+
+
   $loginstring = "SELECT * FROM tbl_user WHERE user_name='{$username}' AND user_pass='{$password}'";
   $userTest = mysqli_query($link, $loginstring);
   echo mysqli_num_rows($userTest);
