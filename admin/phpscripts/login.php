@@ -4,7 +4,7 @@ function logIn($username, $password, $ip)
     require_once('connect.php');
     $username = mysqli_real_escape_string($link, $username);
     $password = mysqli_real_escape_string($link, $password);
-  
+
     $userQuery = "SELECT * FROM tbl_user WHERE user_name='{$username}'";
     $user = mysqli_query($link, $userQuery);
 
@@ -32,7 +32,7 @@ function logIn($username, $password, $ip)
             redirect_to("admin_index.php");
         } else {
             $user_attempt = 3 - $user_attempt - 1;
-            $IncreaseAttemptQuery = "UPDATE tbl_user SET user_attempt = user_attempt + 1 WHERE user_id={$id}";
+            $IncreaseAttemptQuery = "UPDATE tbl_user SET user_attempt = user_attempt = 3 WHERE user_id={$id}";
             $resetAttempt = mysqli_query($link, $IncreaseAttemptQuery);
 
             $message = "Username and or password is incorrect. <br> Please make sure your caplock key is turned off.";
